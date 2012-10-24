@@ -5,16 +5,19 @@
     <version>2.0.3</version>
     <authors>Marc Gravell, Sam Saffron, Jarrod Dixon</authors>
     <owners>Dennis Riis</owners>
-    <description>MiniProfiler integration for Entity Framework **for the version of MiniProfiler included in ServiceStack**</description>
+    <description>MiniProfiler integration for Entity Framework **for the version of MiniProfiler included in ServiceStack**
+
+    See https://github.com/driis/ServiceStack.MiniProfiler.EntityFramework for details.
+    </description>
     <projectUrl>http://code.google.com/p/mvc-mini-profiler/</projectUrl>
     <licenseUrl>http://www.apache.org/licenses/LICENSE-2.0</licenseUrl>
     <tags>profiler sql mvc asp.net performance timing</tags>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-	<dependencies>
-		<dependency id="ServiceStack" version="3.9.24" /> 
-	</dependencies>
-	  <files>
-    <file src="bin\Release\MiniProfiler.EntityFramework.*" target="lib/net40" />
-  </files>
+    <dependencies>
+      <dependency id="ServiceStack" version="3.9.24" /> 
+    </dependencies>
   </metadata>
+    <files>
+      <file src="bin\Release\MiniProfiler.EntityFramework.*" target="lib/net40" />
+    </files>
 </package>
