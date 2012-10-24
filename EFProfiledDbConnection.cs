@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using ServiceStack.MiniProfiler.Data;
 using StackExchange.Profiling.Data;
 using System.Data.Common;
 using System.Reflection;

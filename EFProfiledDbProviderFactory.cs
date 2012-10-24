@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Data.Common;
+using ServiceStack.MiniProfiler;
+using ServiceStack.MiniProfiler.Data;
 using StackExchange.Profiling;
 using System.Reflection;
 
@@ -49,14 +51,14 @@ namespace StackExchange.Profiling.Data
         /// </summary>
         public override DbCommand CreateCommand()
         {
-            return new ProfiledDbCommand(tail.CreateCommand(), null, MiniProfiler.Current);
+            return new ProfiledDbCommand(tail.CreateCommand(), null, Profiler.Current);
         }
         /// <summary>
         /// proxy
         /// </summary>
         public override DbConnection CreateConnection()
         {
-            return new EFProfiledDbConnection(tail.CreateConnection(), MiniProfiler.Current);
+            return new EFProfiledDbConnection(tail.CreateConnection(), Profiler.Current);
         }
         /// <summary>
         /// proxy
@@ -107,7 +109,7 @@ namespace StackExchange.Profiling.Data
 
             if (serviceType == typeof(DbProviderServices))
             {
-                svc = new ProfiledDbProviderServices((DbProviderServices)svc, MiniProfiler.Current);
+                svc = new ProfiledDbProviderServices((DbProviderServices)svc, Profiler.Current);
             }
             return svc;
         }

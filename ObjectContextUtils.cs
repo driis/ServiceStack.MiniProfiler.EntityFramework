@@ -8,6 +8,7 @@ using System.Reflection.Emit;
 using System.Data.EntityClient;
 using System.Web.Configuration;
 using System.Data.Metadata.Edm;
+using ServiceStack.MiniProfiler;
 
 
 namespace StackExchange.Profiling.Data
@@ -164,7 +165,7 @@ namespace StackExchange.Profiling.Data
         /// </summary>
         public static T GetProfiledContext<T>() where T : System.Data.Objects.ObjectContext
         {
-            var conn = new EFProfiledDbConnection(GetStoreConnection<T>(), MiniProfiler.Current);
+            var conn = new EFProfiledDbConnection(GetStoreConnection<T>(), Profiler.Current);
             return ObjectContextUtils.CreateObjectContext<T>(conn);
         }
 

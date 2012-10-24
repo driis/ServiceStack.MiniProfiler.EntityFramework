@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Data.Entity.Infrastructure;
+using ServiceStack.MiniProfiler;
 
 namespace StackExchange.Profiling.Data
 {
@@ -29,7 +30,7 @@ namespace StackExchange.Profiling.Data
         /// <returns></returns>
         public System.Data.Common.DbConnection CreateConnection(string nameOrConnectionString)
         {
-            return new EFProfiledDbConnection(_wrapped.CreateConnection(nameOrConnectionString), MiniProfiler.Current);
+            return new EFProfiledDbConnection(_wrapped.CreateConnection(nameOrConnectionString), Profiler.Current);
         }
     }
 }

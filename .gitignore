@@ -47,3 +47,4 @@ build/
 *.DS_Store
 
 *.dotCover
+packages/
