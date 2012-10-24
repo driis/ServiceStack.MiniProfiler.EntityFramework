@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace StackExchange.Profiling.Data
+namespace ServiceStack.MiniProfiler.EntityFramework
 {
     /// <summary>
     /// Utility class to provide translations between DbProviderFactory and EFProfiledDbProviderFactory types.
@@ -29,17 +29,17 @@ namespace StackExchange.Profiling.Data
 
         private static Type GetProfiledProviderFactoryType(Type factoryType)
         {
-            return typeof(Data.EFProfiledDbProviderFactory<>).MakeGenericType(factoryType);
+            return typeof(EFProfiledDbProviderFactory<>).MakeGenericType(factoryType);
         }
 
         private static Type GetEF41ProfiledProviderFactoryType(Type factoryType)
         {
             if (factoryType == typeof(System.Data.SqlClient.SqlClientFactory))
-                return typeof(Data.EFProfiledSqlClientDbProviderFactory);
+                return typeof(EFProfiledSqlClientDbProviderFactory);
             else if (factoryType == typeof(System.Data.OleDb.OleDbFactory))
-                return typeof(Data.EFProfiledOleDbProviderFactory);
+                return typeof(EFProfiledOleDbProviderFactory);
             else if (factoryType == typeof(System.Data.Odbc.OdbcFactory))
-                return typeof(Data.EFProfiledOdbcProviderFactory);
+                return typeof(EFProfiledOdbcProviderFactory);
 
             return null;
         }

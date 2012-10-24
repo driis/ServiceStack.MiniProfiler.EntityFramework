@@ -1,17 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Reflection;
 using System.Data.Common;
 using System.Reflection.Emit;
 using System.Data.EntityClient;
 using System.Web.Configuration;
 using System.Data.Metadata.Edm;
-using ServiceStack.MiniProfiler;
 
-
-namespace StackExchange.Profiling.Data
+namespace ServiceStack.MiniProfiler.EntityFramework
 {
     public static class ObjectContextUtils
     {

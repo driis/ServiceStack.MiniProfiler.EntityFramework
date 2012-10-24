@@ -6,7 +6,7 @@ using System.Reflection;
 using System.Diagnostics;
 using System.Security;
 
-namespace StackExchange.Profiling
+namespace ServiceStack.MiniProfiler.EntityFramework
 {
     public partial class MiniProfilerEF
     {
@@ -40,7 +40,7 @@ namespace StackExchange.Profiling
         {
             if (supportExplicitConnectionStrings && (applyEFHack || IsEF41HackRequired()))
             {
-                StackExchange.Profiling.Data.EFProviderUtilities.UseEF41Hack();
+                EFProviderUtilities.UseEF41Hack();
             }
 
             InitializeDbProviderFactories();
@@ -81,7 +81,7 @@ namespace StackExchange.Profiling
                     continue;
                 }
 
-                var profType = StackExchange.Profiling.Data.EFProviderUtilities.ResolveFactoryType(factory.GetType());
+                var profType = EFProviderUtilities.ResolveFactoryType(factory.GetType());
                 if (profType != null)
                 {
                     DataRow profiled = table.NewRow();

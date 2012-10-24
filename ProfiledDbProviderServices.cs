@@ -1,7 +1,7 @@
 ﻿using System.Data.Common;
 using ServiceStack.MiniProfiler.Data;
 
-namespace StackExchange.Profiling.Data
+namespace ServiceStack.MiniProfiler.EntityFramework
 {
     class ProfiledDbProviderServices : DbProviderServices
     {

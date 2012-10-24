@@ -1,11 +1,9 @@
 ﻿using System;
 using System.Data.Common;
-using ServiceStack.MiniProfiler;
 using ServiceStack.MiniProfiler.Data;
-using StackExchange.Profiling;
 using System.Reflection;
 
-namespace StackExchange.Profiling.Data
+namespace ServiceStack.MiniProfiler.EntityFramework
 {
     /// <summary>
     /// Wrapper for a db provider factory to enable profiling

@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Data.Entity.Infrastructure;
-using ServiceStack.MiniProfiler;
+﻿using System.Data.Entity.Infrastructure;
 
-namespace StackExchange.Profiling.Data
+namespace ServiceStack.MiniProfiler.EntityFramework
 {
     /// <summary>
     /// Connection factory used for EF Code First DbContext API
